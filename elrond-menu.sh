@@ -45,13 +45,13 @@ while [ $opt != '' ]
       case $opt in
         1) clear;
             option_picked "Option 1 Picked";
-            printf "";
+            printf "\n";
 			cd ~ && cat autoupdate.status
             show_menu;
         ;;
         2) clear;
             option_picked "Option 2 Picked";
-            printf "Disk usage: ";
+            printf "Disk usage: \n";
 			cd ~ && du -hs ./elrond-nodes
             show_menu;
         ;;
@@ -59,44 +59,50 @@ while [ $opt != '' ]
             option_picked "Option 3 Picked";
             printf "Forcing Node Autoupdate ";
 			me=$(whoami) && cd ~ && /bin/bash -c /home/$me/elrond-go-scripts-v2/auto-updater.sh
-			printf "Last run: ";
+			printf "Last run: \n";
 			cd ~ && tail -4 ./autoupdate.status
+            show_menu;
+        ;;
+		4) clear;
+            option_picked "Option 4 Picked";
+            printf "Crontab Job: \n";
+			crontab -l
             show_menu;
         ;;
         5) clear;
             option_picked "Option 5 Picked";
-            printf "Crontab Job: ";
-			crontab -l
+            cd $HOME && ./elrond-utils/termui -address localhost:8080
             show_menu;
         ;;
 		6) clear;
             option_picked "Option 6 Picked";
-            cd $HOME/elrond-utils && ./elrond-utils/termui -address localhost:8080
+            cd $HOME && ./elrond-utils/termui -address localhost:8081
             show_menu;
         ;;
 		7) clear;
             option_picked "Option 7 Picked";
-            cd $HOME/elrond-utils && ./elrond-utils/termui -address localhost:8081
+            cd $HOME && ./elrond-utils/termui -address localhost:8082
             show_menu;
         ;;
 		8) clear;
             option_picked "Option 8 Picked";
-            cd $HOME/elrond-utils && ./elrond-utils/termui -address localhost:8082
+            cd $HOME && ./elrond-utils/termui -address localhost:8083
             show_menu;
         ;;
 		9) clear;
             option_picked "Option 9 Picked";
-            cd $HOME/elrond-utils && ./elrond-utils/termui -address localhost:8083
+            cd $HOME && ./elrond-utils/termui -address localhost:8084
             show_menu;
         ;;
 		10) clear;
             option_picked "Option 10 Picked";
-            cd $HOME/elrond-utils && ./elrond-utils/termui -address localhost:8084
+            cd $HOME && ./elrond-utils/termui -address localhost:8085
             show_menu;
         ;;
 		11) clear;
             option_picked "Option 11 Picked";
-            cd $HOME/elrond-utils && ./elrond-utils/termui -address localhost:8085
+			printf "Starting Nodes: \n";
+			cd ~/elrond-go-scripts-v2 && ./script.sh start
             show_menu;
         ;;
 		12) clear;
