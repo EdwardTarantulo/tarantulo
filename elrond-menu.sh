@@ -11,13 +11,13 @@ show_menu(){
     printf "${menu}**${number} 2)${menu} Check Node Space Usage ${normal}\n"
     printf "${menu}**${number} 3)${menu} Force Node Autoupdate ${normal}\n"
 	printf "${menu}**${number} 4)${menu} Check crontab job ${normal}\n"
-    printf "${menu}**${number} 5)${menu} Open Node 1 Termui Info${normal}\n"
+    printf "${menu}**${number} 5)${menu}\n Open Node 1 Termui Info${normal}\n"
 	printf "${menu}**${number} 6)${menu} Open Node 2 Termui Info${normal}\n"
 	printf "${menu}**${number} 7)${menu} Open Node 3 Termui Info${normal}\n"
 	printf "${menu}**${number} 8)${menu} Open Node 4 Termui Info${normal}\n"
 	printf "${menu}**${number} 9)${menu} Open Node 5 Termui Info${normal}\n"
 	printf "${menu}**${number} 10)${menu} Open Node 6 Termui Info${normal}\n"
-	printf "${menu}**${number} 11)${menu} Start the Nodes${normal}\n"
+	printf "${menu}**${number} 11)${menu}\n Start the Nodes${normal}\n"
 	printf "${menu}**${number} 12)${menu} Stop the Nodes${normal}\n"
 	printf "${menu}**${number} 13)${menu} Manual Node Update${normal}\n"
 	printf "${menu}**${number} 14)${menu} Check User${normal}\n"
@@ -46,13 +46,13 @@ while [ $opt != '' ]
         1) clear;
             option_picked "Option 1 Picked";
             printf "\n";
-			cd ~ && cat autoupdate.status
+			cd $HOME && cat autoupdate.status
             show_menu;
         ;;
         2) clear;
             option_picked "Option 2 Picked";
             printf "Disk usage: \n";
-			cd ~ && du -hs ./elrond-nodes
+			cd $HOME && du -hs ./elrond-nodes
             show_menu;
         ;;
         3) clear;
@@ -60,7 +60,7 @@ while [ $opt != '' ]
             printf "Forcing Node Autoupdate ";
 			me=$(whoami) && cd ~ && /bin/bash -c /home/$me/elrond-go-scripts-v2/auto-updater.sh
 			printf "Last run: \n";
-			cd ~ && tail -4 ./autoupdate.status
+			cd $HOME && tail -4 ./autoupdate.status
             show_menu;
         ;;
 		4) clear;
@@ -106,43 +106,46 @@ while [ $opt != '' ]
             show_menu;
         ;;
 		12) clear;
-            option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
+            option_picked "Option 12 Picked";
+			printf "Stopping Nodes: \n";
+            cd ~/elrond-go-scripts-v2 && ./script.sh stop
             show_menu;
         ;;
 		13) clear;
-            option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
+            option_picked "Option 13 Picked";
+            printf "Updating Nodes: \n";
+			cd ~/elrond-go-scripts-v2 && ./script.sh update
             show_menu;
         ;;
 		14) clear;
-            option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
+            option_picked "Option 14 Picked";
+            printf "Current user: \n";
+			whoami
             show_menu;
         ;;
 		15) clear;
-            option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
+            option_picked "Option 15 Picked";
+            printf "Editing variables.cfg: \n";
+			cd ~/elrond-go-scripts-v2/config && nano variables.cfg
             show_menu;
         ;;
 		16) clear;
-            option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
+            option_picked "Option 16 Picked";
+            printf "Zip Node *.PEM files and Move to VALIDATOR_KEYS folder: \n";
+			cd ~ && mkdir -p ~/VALIDATOR_KEYS
+			zip node-0.zip $HOME/elrond-nodes/node-0/config/*.pem && mv $HOME/elrond-nodes/node-0/config/node-0.zip $HOME/VALIDATOR_KEYS/
+			zip node-1.zip $HOME/elrond-nodes/node-1/config/*.pem && mv $HOME/elrond-nodes/node-1/config/node-0.zip $HOME/VALIDATOR_KEYS/
+			zip node-2.zip $HOME/elrond-nodes/node-2/config/*.pem && mv $HOME/elrond-nodes/node-2/config/node-0.zip $HOME/VALIDATOR_KEYS/
+			zip node-3.zip $HOME/elrond-nodes/node-3/config/*.pem && mv $HOME/elrond-nodes/node-3/config/node-0.zip $HOME/VALIDATOR_KEYS/
+			zip node-4.zip $HOME/elrond-nodes/node-4/config/*.pem && mv $HOME/elrond-nodes/node-4/config/node-0.zip $HOME/VALIDATOR_KEYS/
+			zip node-5.zip $HOME/elrond-nodes/node-5/config/*.pem && mv $HOME/elrond-nodes/node-5/config/node-0.zip $HOME/VALIDATOR_KEYS/
+			zip node-6.zip $HOME/elrond-nodes/node-6/config/*.pem && mv $HOME/elrond-nodes/node-6/config/node-0.zip $HOME/VALIDATOR_KEYS/
             show_menu;
         ;;
 		17) clear;
-            option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
-            show_menu;
-        ;;
-		18) clear;
-            option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
-            show_menu;
-        ;;
-		19) clear;
-            option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
+            option_picked "Option 17 Picked";
+            printf "Installing nodes";
+			cd ~/elrond-go-scripts-v2 && ./script.sh install
             show_menu;
         ;;
         x)exit;
