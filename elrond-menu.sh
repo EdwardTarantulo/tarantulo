@@ -1,5 +1,5 @@
 #!/bin/sh
- 
+
 show_menu(){
     normal=`echo "\033[m"`
     menu=`echo "\033[36m"` #Blue
@@ -11,13 +11,13 @@ show_menu(){
     printf "${menu}**${number} 2)${menu} Check Node Space Usage ${normal}\n"
     printf "${menu}**${number} 3)${menu} Force Node Autoupdate ${normal}\n"
 	printf "${menu}**${number} 4)${menu} Check crontab job ${normal}\n"
-    printf "${menu}**${number} 5)${menu}\n Open Node 1 Termui Info${normal}\n"
+    printf "${menu}**${number} 5)${menu} Open Node 1 Termui Info${normal}\n"
 	printf "${menu}**${number} 6)${menu} Open Node 2 Termui Info${normal}\n"
 	printf "${menu}**${number} 7)${menu} Open Node 3 Termui Info${normal}\n"
 	printf "${menu}**${number} 8)${menu} Open Node 4 Termui Info${normal}\n"
 	printf "${menu}**${number} 9)${menu} Open Node 5 Termui Info${normal}\n"
 	printf "${menu}**${number} 10)${menu} Open Node 6 Termui Info${normal}\n"
-	printf "${menu}**${number} 11)${menu}\n Start the Nodes${normal}\n"
+	printf "${menu}**${number} 11)${menu} Start the Nodes${normal}\n"
 	printf "${menu}**${number} 12)${menu} Stop the Nodes${normal}\n"
 	printf "${menu}**${number} 13)${menu} Manual Node Update${normal}\n"
 	printf "${menu}**${number} 14)${menu} Check User${normal}\n"
@@ -114,7 +114,7 @@ while [ $opt != '' ]
 		13) clear;
             option_picked "Option 13 Picked";
             printf "Updating Nodes: \n";
-			cd ~/elrond-go-scripts-v2 && ./script.sh update
+			cd ~/elrond-go-scripts-v2 && ./script.sh upgrade
             show_menu;
         ;;
 		14) clear;
@@ -144,7 +144,7 @@ while [ $opt != '' ]
         ;;
 		17) clear;
             option_picked "Option 17 Picked";
-            printf "Installing nodes";
+            printf "Installing nodes: \n";
 			cd ~/elrond-go-scripts-v2 && ./script.sh install
             show_menu;
         ;;
