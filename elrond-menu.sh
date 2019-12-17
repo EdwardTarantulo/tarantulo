@@ -10,21 +10,21 @@ show_menu(){
     printf "${menu}**${number} 1)${menu} Check Node Autoupdate Status ${normal}\n"
     printf "${menu}**${number} 2)${menu} Check Node Space Usage ${normal}\n"
     printf "${menu}**${number} 3)${menu} Force Node Autoupdate ${normal}\n"
-	printf "${menu}**${number} 4)${menu} Check crontab job  ${normal}\n"
-    printf "${menu}**${number} 6)${menu} Some other commands${normal}\n"
+	printf "${menu}**${number} 4)${menu} Check crontab job ${normal}\n"
+    printf "${menu}**${number} 5)${menu} Some other commands${normal}\n"
+	printf "${menu}**${number} 6)${menu} Some other commands${normal}\n"
 	printf "${menu}**${number} 7)${menu} Some other commands${normal}\n"
 	printf "${menu}**${number} 8)${menu} Some other commands${normal}\n"
 	printf "${menu}**${number} 9)${menu} Some other commands${normal}\n"
 	printf "${menu}**${number} 10)${menu} Some other commands${normal}\n"
-	printf "${menu}**${number} 11)${menu} Some other commands${normal}\n"
-	printf "${menu}**${number} 12)${menu} Some other commands${normal}\n"
-	printf "${menu}**${number} 13)${menu} Start the Nodes${normal}\n"
-	printf "${menu}**${number} 14)${menu} Stop the Nodes${normal}\n"
-	printf "${menu}**${number} 15)${menu} Manual Node Update${normal}\n"
-	printf "${menu}**${number} 16)${menu} Check User${normal}\n"
-	printf "${menu}**${number} 17)${menu} Edit variables.cfg${normal}\n"
-	printf "${menu}**${number} 18)${menu} Zip Node *.PEM files and Move to VALIDATOR_KEYS folder${normal}\n"
-	printf "${menu}**${number} 19)${menu} Install the node(s) as a service${normal}\n"
+	printf "\n${menu} Node Installation Commands ${normal}\n"
+	printf "${menu}**${number} 11)${menu} Start the Nodes${normal}\n"
+	printf "${menu}**${number} 12)${menu} Stop the Nodes${normal}\n"
+	printf "${menu}**${number} 13)${menu} Manual Node Update${normal}\n"
+	printf "${menu}**${number} 14)${menu} Check User${normal}\n"
+	printf "${menu}**${number} 15)${menu} Edit variables.cfg${normal}\n"
+	printf "${menu}**${number} 16)${menu} Zip Node *.PEM files and Move to VALIDATOR_KEYS folder${normal}\n"
+	printf "${menu}**${number} 17)${menu} Install the node(s) as a service${normal}\n"
     printf "Please enter a menu option and enter or ${fgred}x to exit. ${normal}"
     read opt
 }
@@ -60,42 +60,44 @@ while [ $opt != '' ]
             option_picked "Option 3 Picked";
             printf "Forcing Node Autoupdate ";
 			me=$(whoami) && cd ~ && /bin/bash -c /home/$me/elrond-go-scripts-v2/auto-updater.sh
+			printf "Last run: ";
+			cd ~ && tail -4 ./autoupdate.status
             show_menu;
         ;;
         5) clear;
-            option_picked "Option 4 Picked";
+            option_picked "Option 5 Picked";
             printf "Crontab Job: ";
 			crontab -l
             show_menu;
         ;;
 		6) clear;
-            option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
+            option_picked "Option 6 Picked";
+            cd $HOME/elrond-utils && ./elrond-utils/termui -address localhost:8080
             show_menu;
         ;;
 		7) clear;
-            option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
+            option_picked "Option 7 Picked";
+            cd $HOME/elrond-utils && ./elrond-utils/termui -address localhost:8081
             show_menu;
         ;;
 		8) clear;
-            option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
+            option_picked "Option 8 Picked";
+            cd $HOME/elrond-utils && ./elrond-utils/termui -address localhost:8082
             show_menu;
         ;;
 		9) clear;
-            option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
+            option_picked "Option 9 Picked";
+            cd $HOME/elrond-utils && ./elrond-utils/termui -address localhost:8083
             show_menu;
         ;;
 		10) clear;
-            option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
+            option_picked "Option 10 Picked";
+            cd $HOME/elrond-utils && ./elrond-utils/termui -address localhost:8084
             show_menu;
         ;;
 		11) clear;
-            option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
+            option_picked "Option 11 Picked";
+            cd $HOME/elrond-utils && ./elrond-utils/termui -address localhost:8085
             show_menu;
         ;;
 		12) clear;
