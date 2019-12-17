@@ -46,24 +46,26 @@ while [ $opt != '' ]
       case $opt in
         1) clear;
             option_picked "Option 1 Picked";
-            printf "TExt 1";
+            printf "";
 			cd ~ && cat autoupdate.status
             show_menu;
         ;;
         2) clear;
             option_picked "Option 2 Picked";
-            printf "Launchin termui for node 0";
+            printf "Disk usage: ";
 			cd ~ && du -hs ./elrond-nodes
             show_menu;
         ;;
         3) clear;
             option_picked "Option 3 Picked";
-            printf "sudo service apache2 restart";
+            printf "Forcing Node Autoupdate ";
+			me=$(whoami) && cd ~ && /bin/bash -c /home/$me/elrond-go-scripts-v2/auto-updater.sh
             show_menu;
         ;;
         5) clear;
             option_picked "Option 4 Picked";
-            printf "ssh lmesser@ -p 2010";
+            printf "Crontab Job: ";
+			crontab -l
             show_menu;
         ;;
 		6) clear;
