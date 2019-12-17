@@ -7,12 +7,10 @@ show_menu(){
     bgred=`echo "\033[41m"`
     fgred=`echo "\033[31m"`
     printf "\n${menu}Elrond Node Runner menu v 0.1${normal}\n"
-	printf "${menu}*******Node Managment Commands********${normal}\n"
     printf "${menu}**${number} 1)${menu} Check Node Autoupdate Status ${normal}\n"
     printf "${menu}**${number} 2)${menu} Check Node Space Usage ${normal}\n"
     printf "${menu}**${number} 3)${menu} Force Node Autoupdate ${normal}\n"
 	printf "${menu}**${number} 4)${menu} Check crontab job  ${normal}\n"
-	printf "${menu}*******Node Termui Info*********${normal}\n"
     printf "${menu}**${number} 6)${menu} Some other commands${normal}\n"
 	printf "${menu}**${number} 7)${menu} Some other commands${normal}\n"
 	printf "${menu}**${number} 8)${menu} Some other commands${normal}\n"
@@ -20,7 +18,6 @@ show_menu(){
 	printf "${menu}**${number} 10)${menu} Some other commands${normal}\n"
 	printf "${menu}**${number} 11)${menu} Some other commands${normal}\n"
 	printf "${menu}**${number} 12)${menu} Some other commands${normal}\n"
-    printf "${menu}*******Node Installation Commands*********${normal}\n"
 	printf "${menu}**${number} 13)${menu} Start the Nodes${normal}\n"
 	printf "${menu}**${number} 14)${menu} Stop the Nodes${normal}\n"
 	printf "${menu}**${number} 15)${menu} Manual Node Update${normal}\n"
