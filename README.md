@@ -15,7 +15,7 @@ chmod u+x elrond-menu.sh
 
 ## How it looks?
 
-![Elrond Menu](https://tarantulo.lt/upload/elrond/Elrond-node-menu-runner.png)
+![Elrond Menu](https://tarantulo.lt/upload/elrond/Elrond-node-menu.png)
 
 ## What will this menu do?
 
