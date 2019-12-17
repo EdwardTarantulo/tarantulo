@@ -1,4 +1,5 @@
 #!/bin/sh
+ 
 show_menu(){
     normal=`echo "\033[m"`
     menu=`echo "\033[36m"` #Blue
@@ -27,7 +28,6 @@ show_menu(){
 	printf "${menu}**${number} 17)${menu} Edit variables.cfg${normal}\n"
 	printf "${menu}**${number} 18)${menu} Zip Node *.PEM files and Move to VALIDATOR_KEYS folder${normal}\n"
 	printf "${menu}**${number} 19)${menu} Install the node(s) as a service${normal}\n"
-	
     printf "Please enter a menu option and enter or ${fgred}x to exit. ${normal}"
     read opt
 }
@@ -50,13 +50,13 @@ while [ $opt != '' ]
         1) clear;
             option_picked "Option 1 Picked";
             printf "TExt 1";
-			cat autoupdate.status
+			cd ~ && cat autoupdate.status
             show_menu;
         ;;
         2) clear;
             option_picked "Option 2 Picked";
             printf "Launchin termui for node 0";
-			cd ~ && ./elrond-utils/termui -address localhost:8080
+			cd ~ && du -hs ./elrond-nodes
             show_menu;
         ;;
         3) clear;
@@ -64,7 +64,77 @@ while [ $opt != '' ]
             printf "sudo service apache2 restart";
             show_menu;
         ;;
-        4) clear;
+        5) clear;
+            option_picked "Option 4 Picked";
+            printf "ssh lmesser@ -p 2010";
+            show_menu;
+        ;;
+		6) clear;
+            option_picked "Option 4 Picked";
+            printf "ssh lmesser@ -p 2010";
+            show_menu;
+        ;;
+		7) clear;
+            option_picked "Option 4 Picked";
+            printf "ssh lmesser@ -p 2010";
+            show_menu;
+        ;;
+		8) clear;
+            option_picked "Option 4 Picked";
+            printf "ssh lmesser@ -p 2010";
+            show_menu;
+        ;;
+		9) clear;
+            option_picked "Option 4 Picked";
+            printf "ssh lmesser@ -p 2010";
+            show_menu;
+        ;;
+		10) clear;
+            option_picked "Option 4 Picked";
+            printf "ssh lmesser@ -p 2010";
+            show_menu;
+        ;;
+		11) clear;
+            option_picked "Option 4 Picked";
+            printf "ssh lmesser@ -p 2010";
+            show_menu;
+        ;;
+		12) clear;
+            option_picked "Option 4 Picked";
+            printf "ssh lmesser@ -p 2010";
+            show_menu;
+        ;;
+		13) clear;
+            option_picked "Option 4 Picked";
+            printf "ssh lmesser@ -p 2010";
+            show_menu;
+        ;;
+		14) clear;
+            option_picked "Option 4 Picked";
+            printf "ssh lmesser@ -p 2010";
+            show_menu;
+        ;;
+		15) clear;
+            option_picked "Option 4 Picked";
+            printf "ssh lmesser@ -p 2010";
+            show_menu;
+        ;;
+		16) clear;
+            option_picked "Option 4 Picked";
+            printf "ssh lmesser@ -p 2010";
+            show_menu;
+        ;;
+		17) clear;
+            option_picked "Option 4 Picked";
+            printf "ssh lmesser@ -p 2010";
+            show_menu;
+        ;;
+		18) clear;
+            option_picked "Option 4 Picked";
+            printf "ssh lmesser@ -p 2010";
+            show_menu;
+        ;;
+		19) clear;
             option_picked "Option 4 Picked";
             printf "ssh lmesser@ -p 2010";
             show_menu;
