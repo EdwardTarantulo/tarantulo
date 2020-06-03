@@ -134,13 +134,13 @@ while [ $opt != '' ]
             option_picked "Option 16 Picked";
             printf "Zip Node *.PEM files and Move to VALIDATOR_KEYS folder: \n";
 			cd ~ && mkdir -p ~/VALIDATOR_KEYS
-			zip $HOME/VALIDATOR_KEYS/node-0.zip $HOME/elrond-nodes/node-0/config/*.pem 
-			zip $HOME/VALIDATOR_KEYS/node-1.zip $HOME/elrond-nodes/node-1/config/*.pem 
-			zip $HOME/VALIDATOR_KEYS/node-2.zip $HOME/elrond-nodes/node-2/config/*.pem 
-			zip $HOME/VALIDATOR_KEYS/node-3.zip $HOME/elrond-nodes/node-3/config/*.pem 
-			zip $HOME/VALIDATOR_KEYS/node-4.zip $HOME/elrond-nodes/node-4/config/*.pem 
-			zip $HOME/VALIDATOR_KEYS/node-5.zip $HOME/elrond-nodes/node-5/config/*.pem 
-			zip $HOME/VALIDATOR_KEYS/node-6.zip $HOME/elrond-nodes/node-6/config/*.pem 
+			cd $HOME/elrond-nodes/node-0/config && zip $HOME/VALIDATOR_KEYS/node-0.zip *.pem 
+			cd $HOME/elrond-nodes/node-1/config && zip $HOME/VALIDATOR_KEYS/node-1.zip *.pem 
+			cd $HOME/elrond-nodes/node-2/config && zip $HOME/VALIDATOR_KEYS/node-2.zip *.pem 
+			cd $HOME/elrond-nodes/node-3/config && zip $HOME/VALIDATOR_KEYS/node-3.zip *.pem 
+			cd $HOME/elrond-nodes/node-4/config && zip $HOME/VALIDATOR_KEYS/node-4.zip *.pem  
+			cd $HOME/elrond-nodes/node-5/config && zip $HOME/VALIDATOR_KEYS/node-5.zip *.pem 
+			cd $HOME/elrond-nodes/node-6/config && zip $HOME/VALIDATOR_KEYS/node-6.zip *.pem 
             show_menu;
         ;;
 		17) clear;
