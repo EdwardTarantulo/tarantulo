@@ -25,7 +25,6 @@ show_menu(){
 	printf "${menu}**${number} 16)${menu} Zip Node *.PEM files and Move to VALIDATOR_KEYS folder${normal}\n"
 	printf "${menu}**${number} 17)${menu} Install the node(s) as a service${normal}\n"
 	printf "${menu}**${number} 18)${menu} Download Elrond Script${normal}\n"
-	printf "${menu}**${number} 19)${menu} About Script${normal}\n"
     printf "Please enter a menu option and enter or ${fgred}x to exit. ${normal}"
     read opt
 }
@@ -150,32 +149,10 @@ while [ $opt != '' ]
 			cd ~/elrond-go-scripts-v2 && ./script.sh install
             show_menu;
         ;;
-        x)exit;
-        ;;
-        \n)exit;
-        ;;
-        *)clear;
-            option_picked "Pick an option from the menu";
-            show_menu;
-        ;;
 		18) clear;
             option_picked "Option 18 Picked";
-            printf "Downloading script: \n";
+            printf "Downloading Elrond install script.: \n";
 			cd ~ && git clone https://github.com/ElrondNetwork/elrond-go-scripts-v2
-            show_menu;
-        ;;
-        x)exit;
-        ;;
-        \n)exit;
-        ;;
-        *)clear;
-            option_picked "Pick an option from the menu";
-            show_menu;
-        ;;
-		19) clear;
-            option_picked "Option 18 Picked";
-            printf "About: \n";
-			About script message.
             show_menu;
         ;;
         x)exit;
