@@ -157,10 +157,10 @@ while [ $opt != '' ]
             option_picked "Pick an option from the menu";
             show_menu;
         ;;
-	18) clear;
+		18) clear;
             option_picked "Option 18 Picked";
             printf "Downloading script: \n";
-			cd~ && git clone https://github.com/ElrondNetwork/elrond-go-scripts-v2
+			cd ~ && git clone https://github.com/ElrondNetwork/elrond-go-scripts-v2
             show_menu;
         ;;
         x)exit;
