@@ -24,7 +24,7 @@ show_menu(){
 	printf "${menu}**${number} 15)${menu} Edit variables.cfg${normal}\n"
 	printf "${menu}**${number} 16)${menu} Zip Node *.PEM files and Move to VALIDATOR_KEYS folder${normal}\n"
 	printf "${menu}**${number} 17)${menu} Install the node(s) as a service${normal}\n"
-	printf "${menu}**${number} 17)${menu} Download Elrond Script${normal}\n"
+	printf "${menu}**${number} 18)${menu} Download Elrond Script${normal}\n"
     printf "Please enter a menu option and enter or ${fgred}x to exit. ${normal}"
     read opt
 }
