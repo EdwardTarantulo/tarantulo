@@ -170,8 +170,7 @@ while [ $opt != '' ]
             option_picked "Option 20 Picked";
             printf "You will need to save command below. Copy this command:\n";
 	            printf "\n"
-		    printf "$( whoami ) ALL=(ALL) NOPASSWD:ALL \n" 
-		    read -p "Press Enter to continue"	
+		    printf "$( whoami ) ALL=(ALL) NOPASSWD:ALL \n" 	
             show_menu;
 	    ;;
 	    21) clear;
