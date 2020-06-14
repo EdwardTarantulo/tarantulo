@@ -6,7 +6,7 @@ show_menu(){
     number=`echo "\033[33m"` #yellow
     bgred=`echo "\033[41m"`
     fgred=`echo "\033[31m"`
-    printf "\n${menu}Elrond Node Runner menu v 0.1${normal}\n"
+    printf "\n${menu}Elrond Node Runner menu v 0.2${normal}\n"
     printf "${menu}**${number} 1)${menu} Check Node Autoupdate Status ${normal}\n"
     printf "${menu}**${number} 2)${menu} Check Node Space Usage ${normal}\n"
     printf "${menu}**${number} 3)${menu} Force Node Autoupdate ${normal}\n"
