@@ -173,6 +173,7 @@ while [ $opt != '' ]
 		    printf "$( whoami ) ALL=(ALL) NOPASSWD:ALL \n" 
 		    read -n 1 -s -r -p "Press any key to continue"	
             show_menu;
+	    ;;
 	    21) clear;
             option_picked "Option 21 Picked";
             printf "You will need to save command below in the file that will open next. Copy this command:\n";
