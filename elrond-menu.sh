@@ -26,7 +26,8 @@ show_menu(){
 	printf "${menu}**${number} 17)${menu} Zip Node *.PEM files and Move to VALIDATOR_KEYS folder${normal}\n"
 	printf "${menu}**${number} 18)${menu} Install the node(s) as a service${normal}\n"
 	printf "${menu}**${number} 19)${menu} Download Elrond Script${normal}\n"
-	printf "${menu}**${number} 20)${menu} Ensure user privileges${normal}\n"
+	printf "${menu}**${number} 20)${menu} Generate user privage command${normal}\n"
+	printf "${menu}**${number} 21)${menu} Save user privileges${normal}\n"
     printf "Please enter a menu option and enter or ${fgred}x to exit. ${normal}"
     read opt
 }
@@ -167,12 +168,15 @@ while [ $opt != '' ]
         ;;
 		20) clear;
             option_picked "Option 20 Picked";
-            printf "You will need to save command below in the file that will open next. Copy this command:\n";
+            printf "You will need to save command below. Copy this command:\n";
 	            printf "\n"
 		    printf "$( whoami ) ALL=(ALL) NOPASSWD:ALL \n" 
-		    read -p "Press Enter to continue"
-		    echo "sudo visudo -f /etc/sudoers.d/myOverrides" > visudo.sh
-		    chmod u+x visudo.sh && ./visudo.sh		
+		    read -n 1 -s -r -p "Press any key to continue"	
+            show_menu;
+	    21) clear;
+            option_picked "Option 21 Picked";
+            printf "You will need to save command below in the file that will open next. Copy this command:\n";
+	            sudo visudo -f /etc/sudoers.d/myOverrides	
             show_menu;
         ;;
         x)exit;
