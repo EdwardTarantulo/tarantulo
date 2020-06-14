@@ -128,8 +128,7 @@ while [ $opt != '' ]
         ;;
 		15) clear;
             option_picked "Option 15 Picked";
-            printf "Current user and Path: \n";
-			echo User: && whoami 
+            		echo Current user: && whoami
 			echo
                         echo Path: && pwd
             show_menu;
