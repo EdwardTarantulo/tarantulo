@@ -172,7 +172,6 @@ while [ $opt != '' ]
 		    read -n 1 -s -r -p "Press any key to continue"
 		    sudo visudo -f /etc/sudoers.d/myOverrides
             show_menu;
-        ;;
         x)exit;
         ;;
         \n)exit;
