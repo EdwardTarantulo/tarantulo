@@ -23,7 +23,7 @@ Run again by typing:
 
 ## How it looks?
 
-![Elrond Menu](https://tarantulo.lt/upload/elrond/Elrond-node-menu.png)
+![Elrond Menu](https://tarantulo.lt/upload/elrond/Elrond-node-menu-2.png)
 
 ## What will this menu do?
 
