@@ -19,12 +19,13 @@ show_menu(){
 	printf "${menu}**${number} 10)${menu} Open Node 6 Termui Info${normal}\n"
 	printf "${menu}**${number} 11)${menu} Start the Nodes${normal}\n"
 	printf "${menu}**${number} 12)${menu} Stop the Nodes${normal}\n"
-	printf "${menu}**${number} 13)${menu} Manual Node Update${normal}\n"
-	printf "${menu}**${number} 14)${menu} Check User${normal}\n"
-	printf "${menu}**${number} 15)${menu} Edit variables.cfg${normal}\n"
-	printf "${menu}**${number} 16)${menu} Zip Node *.PEM files and Move to VALIDATOR_KEYS folder${normal}\n"
-	printf "${menu}**${number} 17)${menu} Install the node(s) as a service${normal}\n"
-	printf "${menu}**${number} 18)${menu} Download Elrond Script${normal}\n"
+	printf "${menu}**${number} 13)${menu} Restart the Nodes${normal}\n"
+	printf "${menu}**${number} 14)${menu} Manual Node Update${normal}\n"
+	printf "${menu}**${number} 15)${menu} Check User${normal}\n"
+	printf "${menu}**${number} 16)${menu} Edit variables.cfg${normal}\n"
+	printf "${menu}**${number} 17)${menu} Zip Node *.PEM files and Move to VALIDATOR_KEYS folder${normal}\n"
+	printf "${menu}**${number} 18)${menu} Install the node(s) as a service${normal}\n"
+	printf "${menu}**${number} 19)${menu} Download Elrond Script${normal}\n"
     printf "Please enter a menu option and enter or ${fgred}x to exit. ${normal}"
     read opt
 }
@@ -115,23 +116,30 @@ while [ $opt != '' ]
 		13) clear;
             option_picked "Option 13 Picked";
             printf "Updating Nodes: \n";
-			cd ~/elrond-go-scripts-v2 && ./script.sh upgrade
+			cd ~/elrond-go-scripts-v2 && ./script.sh restart
             show_menu;
         ;;
+		
 		14) clear;
             option_picked "Option 14 Picked";
-            printf "Current user: \n";
-			whoami
+            printf "Updating Nodes: \n";
+			cd ~/elrond-go-scripts-v2 && ./script.sh upgrade
             show_menu;
         ;;
 		15) clear;
             option_picked "Option 15 Picked";
-            printf "Editing variables.cfg: \n";
-			cd ~/elrond-go-scripts-v2/config && nano variables.cfg
+            printf "Current user: \n";
+			whoami
             show_menu;
         ;;
 		16) clear;
             option_picked "Option 16 Picked";
+            printf "Editing variables.cfg: \n";
+			cd ~/elrond-go-scripts-v2/config && nano variables.cfg
+            show_menu;
+        ;;
+		17) clear;
+            option_picked "Option 17 Picked";
             printf "Zip Node *.PEM files and Move to VALIDATOR_KEYS folder: \n";
 			cd ~ && mkdir -p ~/VALIDATOR_KEYS
 			cd $HOME/elrond-nodes/node-0/config && zip $HOME/VALIDATOR_KEYS/node-0.zip *.pem 
@@ -143,14 +151,14 @@ while [ $opt != '' ]
 			cd $HOME/elrond-nodes/node-6/config && zip $HOME/VALIDATOR_KEYS/node-6.zip *.pem 
             show_menu;
         ;;
-		17) clear;
-            option_picked "Option 17 Picked";
+		18) clear;
+            option_picked "Option 18 Picked";
             printf "Installing nodes: \n";
 			cd ~/elrond-go-scripts-v2 && ./script.sh install
             show_menu;
         ;;
-		18) clear;
-            option_picked "Option 18 Picked";
+		19) clear;
+            option_picked "Option 19 Picked";
             printf "Downloading Elrond install script.: \n";
 			cd ~ && git clone https://github.com/ElrondNetwork/elrond-go-scripts-v2
             show_menu;
