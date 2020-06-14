@@ -26,6 +26,7 @@ show_menu(){
 	printf "${menu}**${number} 17)${menu} Zip Node *.PEM files and Move to VALIDATOR_KEYS folder${normal}\n"
 	printf "${menu}**${number} 18)${menu} Install the node(s) as a service${normal}\n"
 	printf "${menu}**${number} 19)${menu} Download Elrond Script${normal}\n"
+	printf "${menu}**${number} 20)${menu} Ensure user privileges${normal}\n"
     printf "Please enter a menu option and enter or ${fgred}x to exit. ${normal}"
     read opt
 }
@@ -162,6 +163,14 @@ while [ $opt != '' ]
             option_picked "Option 19 Picked";
             printf "Downloading Elrond install script.: \n";
 			cd ~ && git clone https://github.com/ElrondNetwork/elrond-go-scripts-v2
+            show_menu;
+        ;;
+		20) clear;
+            option_picked "Option 19 Picked";
+            printf "You will need to save command in the file below \n";
+	            echo whoami && echo ALL=(ALL) NOPASSWD:ALL
+		    read -n 1 -s -r -p "Press any key to continue"
+		    sudo visudo -f /etc/sudoers.d/myOverrides
             show_menu;
         ;;
         x)exit;
