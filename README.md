@@ -1,16 +1,24 @@
-# Elrond Node Runner Menu v0.1
+# Elrond Node Runner Menu v0.2
 
-This is a very simple menu for every Elrond Node Runner!
+A straightforward menu for every Elrond Node Runner!
 
-The idea is simple instead of typing the commands everytime just launch ./elrond-menu.sh and select from the menu.
+The idea is simple instead of typing the commands every time; just launch ./elrond-menu.sh and select from the menu.
+
+I know this is just a bodge. But it works and saves time for node managing.
 
 # How to install and use:
 ```
 git clone https://github.com/EdwardTarantulo/tarantulo
-cd tarantulo
-chmod u+x elrond-menu.sh
+mv tarantulo/elrond-menu.sh ./ && rm -rf tarantulo
+chmod u+x elrond-menu.sh && ./elrond-menu.sh
+```
+Copy the above and paste. The commands will download from Github and launch the menu (also removes the readme file).
+
+Run again by typing:
+```
 ./elrond-menu.sh
 ```
+
 **Important!** This menu is designed to work only with nodes installed by using the official guide: https://medium.com/@sever.moldovean/how-install-and-maintain-elrond-nodes-95b1b8f9126e 
 
 ## How it looks?
