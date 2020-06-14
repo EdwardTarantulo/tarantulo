@@ -171,7 +171,7 @@ while [ $opt != '' ]
 	            printf "\n"
 		    printf "$( whoami ) ALL=(ALL) NOPASSWD:ALL \n" 
 	            printf "\n"
-		    read -rsn1 -p"Press any key to continue";echo
+		    read -rn1 -p"Press any key to continue";echo
 		    printf "\n"
 		    sudo visudo -f /etc/sudoers.d/myOverrides
             show_menu;
