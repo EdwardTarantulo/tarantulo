@@ -10,7 +10,7 @@ show_menu(){
     printf "${menu}**${number} 1)${menu} Check Node Autoupdate Status ${normal}\n"
     printf "${menu}**${number} 2)${menu} Check Node Space Usage ${normal}\n"
     printf "${menu}**${number} 3)${menu} Force Node Autoupdate ${normal}\n"
-	printf "${menu}**${number} 4)${menu} Check crontab job ${normal}\n"
+    printf "${menu}**${number} 4)${menu} Check crontab job ${normal}\n"
     printf "${menu}**${number} 5)${menu} Open Node 1 Termui Info${normal}\n"
 	printf "${menu}**${number} 6)${menu} Open Node 2 Termui Info${normal}\n"
 	printf "${menu}**${number} 7)${menu} Open Node 3 Termui Info${normal}\n"
@@ -166,7 +166,7 @@ while [ $opt != '' ]
             show_menu;
         ;;
 		20) clear;
-            option_picked "Option 19 Picked";
+            option_picked "Option 20 Picked";
             printf "You will need to save command in the file below \n";
 	            echo whoami && echo ALL=(ALL) NOPASSWD:ALL
 		    read -n 1 -s -r -p "Press any key to continue"
