@@ -21,7 +21,7 @@ show_menu(){
 	printf "${menu}**${number} 12)${menu} Stop the Nodes${normal}\n"
 	printf "${menu}**${number} 13)${menu} Restart the Nodes${normal}\n"
 	printf "${menu}**${number} 14)${menu} Manual Node Update${normal}\n"
-	printf "${menu}**${number} 15)${menu} Check User${normal}\n"
+	printf "${menu}**${number} 15)${menu} Check User and Path${normal}\n"
 	printf "${menu}**${number} 16)${menu} Edit variables.cfg${normal}\n"
 	printf "${menu}**${number} 17)${menu} Zip Node *.PEM files and Move to VALIDATOR_KEYS folder${normal}\n"
 	printf "${menu}**${number} 18)${menu} Install the node(s) as a service${normal}\n"
@@ -128,8 +128,10 @@ while [ $opt != '' ]
         ;;
 		15) clear;
             option_picked "Option 15 Picked";
-            printf "Current user: \n";
-			whoami
+            printf "Current user and Path: \n";
+			echo User: && whoami 
+			echo
+                        echo Path: && pwd
             show_menu;
         ;;
 		16) clear;
