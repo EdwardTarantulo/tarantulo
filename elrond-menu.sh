@@ -169,8 +169,10 @@ while [ $opt != '' ]
             option_picked "Option 20 Picked";
             printf "You will need to save command below in the file that will open next. Copy this command:\n";
 	            printf "\n"
-		    printf "$( whoami ) ALL=(ALL) NOPASSWD:ALL \n" && read -n 1 -s -r -p "Press any key to continue" && printf "\n"
-                    printf "\n"
+		    printf "$( whoami ) ALL=(ALL) NOPASSWD:ALL \n" 
+	            printf "\n"
+		    read -rsn1 -p"Press any key to continue";echo
+		    printf "\n"
 		    sudo visudo -f /etc/sudoers.d/myOverrides
             show_menu;
         ;;
